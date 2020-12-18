@@ -9,9 +9,9 @@ class PagesController
         return view('index');
     }
 
-    public function about()
+    public function verzamelingen()
     {
-        return view('about');
+        return view('verzamelingen');
     }
 
     public function contact()
