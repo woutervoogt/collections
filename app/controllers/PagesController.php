@@ -14,8 +14,12 @@ class PagesController
         return view('verzamelingen');
     }
 
-    public function contact()
+    public function verzamelingToevoegen()
     {
-        return view('contact');
+        if (array_key_exists('verzamelingTemplate', $_GET)) {
+            return view('verzameling-toevoegen', $_GET);
+        }
+        
+        return view('verzameling-toevoegen');
     }
 }

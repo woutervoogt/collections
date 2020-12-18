@@ -17,6 +17,7 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"
         defer>
     </script>
+    <script src="/public/js/formController.js" defer></script>
 
 </head>
 
