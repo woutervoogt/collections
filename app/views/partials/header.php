@@ -15,7 +15,7 @@
                         <a class="nav-link " aria-current="page" href="/verzamelingen">Verzamelingen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/verzameling_aanmaken">Verzameling
+                        <a class="nav-link " aria-current="page" href="/verzameling/aanmaken">Verzameling
                             aanmaken</a>
                     </li>
                     <li class="nav-item">
