@@ -20,6 +20,14 @@ class CollectionsController
         return view('verzameling-aanmaken');
     }
 
+    public function index()
+    {
+        $id = $_GET['id'];
+        $collection = (array) App::get('database')->selectOne('collections', 'id', $id)[0];
+
+        return view('verzameling', $collection);
+    }
+
     public function store()
     {
         if ($_POST['verzamelingOpenbaar'] === 'true') {

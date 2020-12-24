@@ -19,6 +19,21 @@ class QueryBuilder
         return $statement->fetchAll(\PDO::FETCH_CLASS);
     }
 
+    public function selectOne($table, $key, $value)
+    {
+        $sql = sprintf(
+            'select * from %s where %s = %s',
+            $table,
+            $key,
+            $value
+        );
+
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+    
+        return $statement->fetchAll(\PDO::FETCH_CLASS);
+    }
+
     public function insert($table, $parameters)
     {
         $sql = sprintf(
