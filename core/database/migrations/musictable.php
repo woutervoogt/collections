@@ -58,7 +58,7 @@ return [
                 ]',
             'collection_id' => 1,
             'created'    => date('Y-m-d H:i:s'),
-            'created_by' => 1,
+            'created_by' => 1
         ]),
     ],
 ];

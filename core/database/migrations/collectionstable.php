@@ -14,8 +14,8 @@ return [
     `name` varchar(255) NOT NULL,
     `is_public` boolean NOT NULL DEFAULT FALSE,
     `image_path` varchar(255),
-    `color` char(7),
     `collection_category` varchar(100) NOT NULL,
+    `color` varchar(10),
     `created` timestamp NOT NULL,
     `updated` timestamp DEFAULT CURRENT_TIMESTAMP,
     `deleted` timestamp,
@@ -32,8 +32,8 @@ return [
         [
             'name' => "Vinyl",
             'is_public'  => true,
-            `color` => "#ff1100",
-            `collection_category` => "music",
+            'collection_category' => "music",
+            'color' => "#ff1100",
             'created'    => date('Y-m-d H:i:s'),
             'created_by' => 1
         ]),
