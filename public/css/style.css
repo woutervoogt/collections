@@ -6,8 +6,15 @@ main {
 	background-color: #efeae5;
 }
 
-.card.verzameling-card {
+.card.collection-card {
 	background-color: #efeae5;
+	width: 14rem;
+	height: 14rem;
+}
+
+.collection-card-img {
+	height: 12rem;
+	object-fit: contain;
 }
 
 .left-nav a {
@@ -19,4 +26,9 @@ main {
 	display: inline-block;
 	background-color: #607b94;
 	color: #efeae5;
+}
+
+#bootstrap-override .collection-btn {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.185);
 }

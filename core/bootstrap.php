@@ -10,7 +10,6 @@ App::bind('database', new QueryBuilder(Connection::make(App::get('config')['data
 
 function view($fileName, $data = [])
 {
-    extract($data);
     return require "app/views/$fileName.view.php";
 }
 

@@ -6,9 +6,10 @@ use App\Core\App;
 
 class CollectionsController
 {
-    public function verzamelingen()
+    public function index()
     {
-        return view('verzamelingen');
+        $collections = App::get('database')->selectAll('collections');
+        return view('collections', $collections);
     }
 
     public function verzamelingAanmaken()
