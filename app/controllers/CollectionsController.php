@@ -21,12 +21,13 @@ class CollectionsController
         return view('verzameling-aanmaken');
     }
 
-    public function index()
+    public function showCollection()
     {
         $id = $_GET['id'];
-        $collection = (array) App::get('database')->selectOne('collections', 'id', $id)[0];
-
-        return view('verzameling', $collection);
+        $collection = App::get('database')->selectOne('collections', 'id', $id);
+        $items = App::get('database')->selectAll($collection->collection_category);
+        $data = ['collection' => $collection, 'items' => $items];
+        return view('collection', $data);
     }
 
     public function store()

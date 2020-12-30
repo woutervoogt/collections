@@ -32,13 +32,14 @@
                                 </ul>
                             </div>
 
-                            <a href="/verzameling/id">
+                            <a
+                                href="/verzameling/?id=<?= $collection->id ?>">
                                 <?php if (!empty($collection->img)) : ?>
-                                <img class="card-img-top"
+                                <img class=" card-img-top"
                                     src="<?= $collection->img ?>"
                                     alt="Card image cap">
                                 <?php elseif (!empty($collection->color)) : ?>
-                                <div class="card-img-top"
+                                <div class=" collection-card-img card-img-top"
                                     style="background-color: <?= $collection->color;?>">
                                 </div>
                                 <?php else : ?>
