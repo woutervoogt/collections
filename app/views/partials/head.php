@@ -17,8 +17,9 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"
         defer>
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="/public/js/formController.js" defer></script>
 
 </head>
 
-<body>
+<body id="bootstrap-override">
