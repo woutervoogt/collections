@@ -8,6 +8,8 @@ App::bind('config', require 'config.php');
 
 App::bind('database', new QueryBuilder(Connection::make(App::get('config')['database'])));
 
+session_start();
+
 function view($fileName, $data = [])
 {
     return require "app/views/$fileName.view.php";
