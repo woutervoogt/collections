@@ -16,6 +16,7 @@ function view($fileName, $data = [])
 function redirect($path)
 {
     header("Location: /$path");
+    exit();
 }
 
 function dd()
@@ -32,5 +33,25 @@ function dd()
         echo "</pre>";
 
         die();
+    }
+}
+
+function pluralize($quantity, $singular, $plural=null)
+{
+    if ($quantity==1 || !strlen($singular)) {
+        return $singular;
+    }
+    if ($plural!==null) {
+        return $plural;
+    }
+
+    $last_letter = strtolower($singular[strlen($singular)-1]);
+    switch ($last_letter) {
+        case 'y':
+            return substr($singular, 0, -1).'ies';
+        case 's':
+            return $singular.'es';
+        default:
+            return $singular.'s';
     }
 }

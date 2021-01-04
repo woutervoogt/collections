@@ -3,12 +3,13 @@
 namespace App\Core\Database;
 
 use App\Core\App;
+use PDO;
 
 class QueryBuilder
 {
     protected $pdo;
 
-    public function __construct(\PDO $pdo)
+    public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
@@ -23,7 +24,6 @@ class QueryBuilder
         } catch (\PDOException $e) {
             var_dump($e->getMessage());
         }
-
         return $stmt;
     }
 
@@ -32,7 +32,7 @@ class QueryBuilder
         $statement = $this->pdo->prepare("select * from {$table}");
         $statement->execute();
     
-        return $statement->fetchAll(\PDO::FETCH_CLASS);
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function selectOne($table, $key, $value)
@@ -47,7 +47,7 @@ class QueryBuilder
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
     
-        return $statement->fetchAll(\PDO::FETCH_CLASS)[0];
+        return $statement->fetchAll(PDO::FETCH_CLASS)[0];
     }
 
     /**
@@ -63,7 +63,7 @@ class QueryBuilder
             implode(', ', array_keys($data)),
             ':' . implode(', :', array_keys($data))
         );
-
+        
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute($data);

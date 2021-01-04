@@ -10,4 +10,6 @@ $router->get('verzameling', 'ItemsController@index');
 
 
 $router->get('users', 'UsersController@index');
-$router->post('users', 'UsersController@store');
+
+$router->get('registreren', 'RegisterController@index');
+$router->post('registreren', 'RegisterController@store');
