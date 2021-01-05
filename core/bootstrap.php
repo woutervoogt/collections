@@ -4,11 +4,15 @@ use App\Core\App;
 use App\Core\Database\QueryBuilder;
 use App\Core\Database\Connection;
 
-App::bind('config', require 'config.php');
+session_start();
 
+$dotenv = Dotenv\Dotenv::createImmutable(DOCROOT);
+$dotenv->load();
+
+App::bind('config', require 'config.php');
 App::bind('database', new QueryBuilder(Connection::make(App::get('config')['database'])));
 
-session_start();
+
 
 function view($fileName, $data = [])
 {
