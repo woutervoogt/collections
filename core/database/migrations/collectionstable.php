@@ -16,13 +16,19 @@ return [
     `image_path` varchar(255),
     `collection_category` varchar(100) NOT NULL,
     `color` varchar(10),
+    `user_id` int,
     `created` timestamp NOT NULL,
     `updated` timestamp DEFAULT CURRENT_TIMESTAMP,
     `deleted` timestamp,
     `created_by` int(11) NOT NULL,
     `updated_by` int(11),
     `deleted_by` int(11),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT fk_collection_user
+        FOREIGN KEY (user_id) 
+            REFERENCES users(id)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE
 ) ENGINE=INNODB  DEFAULT CHARSET=latin1;",
 
     // Seeder data goes here
@@ -34,6 +40,7 @@ return [
             'is_public'  => true,
             'collection_category' => "music",
             'color' => "#ff1100",
+            'user_id' => 1,
             'created'    => date('Y-m-d H:i:s'),
             'created_by' => 1
         ]),

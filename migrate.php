@@ -5,6 +5,8 @@ use App\Core\Database\QueryBuilder;
 use App\Core\Database\Connection;
 use App\Core\Database\MigrateDatabase;
 
+define('DOCROOT', __DIR__);
+
 require 'vendor/autoload.php';
 $query = require 'core/bootstrap.php';
 

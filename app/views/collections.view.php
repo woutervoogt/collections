@@ -4,16 +4,11 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-1 left-nav pt-5">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/verzameling/toevoegen">Verzameling toevoegen</a>
-                    </li>
-                </ul>
-            </div>
+            <?php require 'partials/side-nav.php'; ?>
+
             <div class="col pt-5">
                 <div class="row">
-                    <?php foreach ($data as $collection) : ?>
+                    <?php foreach ($data['collections'] as $collection) : ?>
                     <div class="col-sm-4 col-lg-3 col-xl-2">
                         <div class="collection-card card border-0 mb-4">
 

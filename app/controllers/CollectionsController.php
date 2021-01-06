@@ -3,13 +3,17 @@
 namespace App\Controllers;
 
 use App\Core\App;
+use App\Core\Database\QueryBuilder;
 
 class CollectionsController
 {
     public function index()
     {
-        $collections = App::get('database')->selectAll('collections');
-        return view('collections', $collections);
+        // $collections = App::get('database')->selectAll('collections');
+        $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
+        $collections = QueryBuilder::query($query)->fetchAll(\PDO::FETCH_CLASS);
+        $data = ['collections' => $collections];
+        return view('collections', $data);
     }
 
     public function verzamelingAanmaken()

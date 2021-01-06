@@ -1,9 +1,28 @@
-body {
-	min-height: 100%;
+html {
+	min-height: 100vh;
 }
 
-main {
+body {
+	min-height: 100vh;
+	position: relative;
+	overflow: auto;
+	padding-bottom: 10rem; /*height of footer*/
+}
+
+#bootstrap-override {
 	background-color: #efeae5;
+}
+/* main {
+	
+
+} */
+
+footer {
+	margin-top: auto;
+	height: 10rem;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
 }
 
 .card.collection-card {
@@ -18,14 +37,18 @@ main {
 }
 
 .left-nav a {
-	color: #efeae5;
+	color: #f0f8ff;
 }
+
 .left-nav {
 	min-width: 15rem;
-	margin-left: -12px;
 	display: inline-block;
 	background-color: #607b94;
 	color: #efeae5;
+}
+
+#bootstrap-override .more-items {
+	background-color: #607b94;
 }
 
 #bootstrap-override .collection-btn {
