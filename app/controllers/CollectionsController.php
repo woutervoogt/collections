@@ -10,10 +10,15 @@ class CollectionsController
     public function index()
     {
         // $collections = App::get('database')->selectAll('collections');
-        $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
-        $collections = QueryBuilder::query($query)->fetchAll(\PDO::FETCH_CLASS);
-        $data = ['collections' => $collections];
-        return view('collections', $data);
+        if (isset($_SESSION) && isset($_SESSION['user'])) {
+            $data = [];
+            $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
+            $collections = QueryBuilder::query($query)->fetchAll(\PDO::FETCH_CLASS);
+            $data = ['collections' => $collections];
+            return view('collections', $data);
+        } else {
+            redirect('login');
+        }
     }
 
     public function verzamelingAanmaken()

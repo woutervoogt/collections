@@ -12,11 +12,13 @@ class ItemsController
         $id = $_GET['id'];
         $collection = App::get('database')->selectOne('collections', 'id', $id);
         $items = App::get('database')->selectAll($collection->collection_category);
+        $data = ['collection' => $collection, 'items' => $items];
        
-        $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
-        $collections = QueryBuilder::query($query)->fetchAll(\PDO::FETCH_CLASS);
-
-        $data = ['collections' => $collections, 'collection' => $collection, 'items' => $items];
+        if (isset($_SESSION) && isset($_SESSION['user'])) {
+            $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
+            $collections = QueryBuilder::query($query)->fetchAll(\PDO::FETCH_CLASS);
+            $data['collections'] = $collections;
+        }
         
         return view('collection', $data);
     }

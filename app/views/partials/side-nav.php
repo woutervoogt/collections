@@ -1,7 +1,14 @@
+<?php  ?>
 <div class="col-md-1 py-5 px-2 ml-0 h-100 left-nav ">
-
     <ul class="nav flex-column">
+        <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
 
+        <h4 class="navbar-text pt-3 pb-0 pl-0 pr-3 m-0">
+            <?= $_SESSION['user']['name'] ?>
+        </h4>
+        <?php endif ?>
+
+        <?php if (isset($_SESSION) && isset($_SESSION['user']) && $_SESSION['user']['id'] === $data['collections'][0]->user_id) : ?>
         <li class="nav-item">
             <h5 class="navbar-text pt-3 pb-0 px-3 m-0">Verzameling opties</h5>
         </li>
@@ -9,6 +16,7 @@
             <a class="nav-link pt-3 pb-0" href="/verzameling/toevoegen">Verzameling
                 toevoegen</a>
         </li>
+        <?php if (substr($_SERVER['REQUEST_URI'], 0, 13) === '/verzameling/') :?>
         <li class="nav-item">
             <a class="nav-link pt-3 pb-0" href="/verzameling/aanpassen">Verzameling
                 aanpassen</a>
@@ -20,14 +28,14 @@
         <li class="nav-item">
             <a class="nav-link pt-3 pb-0" href="/verzameling/toevoegen">Item toevoegen</a>
         </li>
+        <?php endif ?>
         <hr class="mt-3 mb-0 mx-3">
+        <?php endif ?>
 
+        <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
         <li class="nav-item">
             <h5 class="navbar-text pt-4 pb-0 px-3 m-0">Verzamelingen</h5>
         </li>
-
-        <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
-
         <?php
         $collectionsCount = count($data['collections']);
         for ($i=0; $i < $collectionsCount && $i < 5; $i++) { ?>
