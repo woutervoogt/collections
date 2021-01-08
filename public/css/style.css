@@ -25,6 +25,22 @@ footer {
 	width: 100vw;
 }
 
+#bootstrap-override #top-navbar {
+	background-color: #2a435b;
+	color: #efeae5;
+}
+
+#top-navbar .nav-link {
+	color: #efeae5;
+}
+
+#bootstrap-override .top-nav-toggle {
+	background-color: transparent;
+	border: 1px solid #efeae5;
+	color: #efeae5;
+	border-radius: .25rem;
+}
+
 .card.collection-card {
 	background-color: #efeae5;
 	width: 14rem;

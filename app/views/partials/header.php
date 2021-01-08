@@ -1,13 +1,16 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="top-navbar" class="navbar navbar-expand-lg">
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Collections</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <a class="navbar-brand p-0" href="/">
+                <img src="/public/images/logo.png" height="50" alt="">
+            </a>
+            <button class="navbar-toggler top-nav-toggle" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i data-feather="menu"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="/">Home</a>
                     </li>
@@ -18,15 +21,36 @@
                         <a class="nav-link " aria-current="page" href="/verzameling/aanmaken">Verzameling
                             aanmaken</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/verzameling_aanmaken">Account</a>
+
+                </ul>
+
+                <ul class="navbar-nav">
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/registreren">Registreren</a>
+                    </li> -->
+
+                    <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" role=" button" id="logout-dropdown" data-toggle="dropdown">
+                            <?= $_SESSION['user']['name'] ?>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="nav-link" href="/uitloggen" style="color:black">
+                                Uitloggen
+                            </a>
+                        </div>
+
+
                     </li>
+                    <?php else : ?>
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle" role="button" id="login-dropdown" data-toggle="dropdown">
                             Inloggen
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu dropdown-menu-end">
                             <form class="px-3 py-2 needs-validation" method="POST" action="/inloggen" novalidate>
                                 <div class="form-group mb-2">
                                     <label for="email">E-mail</label>
@@ -52,29 +76,10 @@
 
 
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/registreren">Registreren</a>
-                    </li>
-
-                    <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
-                    <li class="nav-item dropdown">
-
-                        <a class="nav-link dropdown-toggle" role=" button" id="logout-dropdown" data-toggle="dropdown">
-                            <?= $_SESSION['user']['name'] ?>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="nav-link" href="/uitloggen">
-                                Uitloggen
-                            </a>
-                        </div>
-
-
-                    </li>
                     <?php endif ?>
-
-
-
                 </ul>
+
+
             </div>
         </div>
     </nav>

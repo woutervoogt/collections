@@ -39,9 +39,7 @@ class LoginController
         
         if (isset($_REQUEST['email']) && isset($_REQUEST['password'])) {
             $sql = "SELECT * FROM users WHERE email='{$_REQUEST['email']}'";
-            
             $res = QueryBuilder::query($sql)->fetch();
-
             if ($res !== false) {
                 if (password_verify($_REQUEST['password'], $res['password'])) {
                     $this->setUserSession($res);
