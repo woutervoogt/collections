@@ -48,23 +48,24 @@ class Model
      * Fetching one record based on the id
      * @return object
      */
-    // public static function get(int $id, array $selectedFields = null)
-    // {
-    //     if ($id === 0) {
-    //         return null;
-    //     }
+    public static function getOneById(int $id, array $selectedFields = null)
+    {
+        if ($id === 0) {
+            return null;
+        }
 
-    //     $fields = "*";
+        $fields = "*";
 
-    //     if (count($selectedFields) > 0) {
-    //         $fields = self::composeQuery($selectedFields);
-    //     }
+        if (count($selectedFields) > 0) {
+            $fields = self::composeQuery($selectedFields);
+        }
 
-    //     $sql = "SELECT " . $fields .  " FROM " . self::$model . " WHERE id=" . $id . " AND deleted IS NULL";
-    //     $res = MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
+        $sql = "SELECT {$fields} FROM ". self::$model . " WHERE id = {$id} AND deleted IS NULL";
+ 
+        $res = QueryBuilder::query($sql)->fetchAll(PDO::FETCH_CLASS);
 
-    //     return count($res) > 0 ? $res[0] : null;
-    // }
+        return count($res) > 0 ? $res[0] : null;
+    }
 
     /**
      * Saves a record to the model
@@ -80,14 +81,14 @@ class Model
      * Updates a record to the model
      * @param $data array
      */
-    // public static function update(array $data, int $id)
-    // {
-    //     if ($id === 0) {
-    //         return;
-    //     }
+    public static function update(array $data, int $id)
+    {
+        if ($id === 0) {
+            return;
+        }
 
-    //     MySql::update(self::removeIllegalFields($data), self::$model, $id);
-    // }
+        QueryBuilder::update(self::removeIllegalFields($data), self::$model, $id);
+    }
 
     /**
      * Archives a record to the model
@@ -109,14 +110,14 @@ class Model
         return $data;
     }
 
-    // private static function composeQuery(array $fields)
-    // {
-    //     $getFields = '';
+    private static function composeQuery(array $fields)
+    {
+        $getFields = '';
 
-    //     foreach ($fields as $field) {
-    //         $getFields .= $field . ',';
-    //     }
+        foreach ($fields as $field) {
+            $getFields .= $field . ',';
+        }
 
-    //     return rtrim($getFields, ',');
-    // }
+        return rtrim($getFields, ',');
+    }
 }

@@ -5,6 +5,8 @@ $router->get('', 'PagesController@home');
 $router->get('verzamelingen', 'CollectionsController@index');
 $router->get('verzamelingen/aanmaken', 'CollectionsController@createCollection');
 $router->post('verzamelingen/aanmaken', 'CollectionsController@store');
+$router->get('verzamelingen/aanpassen', 'CollectionsController@edit');
+$router->post('verzamelingen/aanpassen', 'CollectionsController@update');
 
 $router->get('verzameling', 'ItemsController@index');
 

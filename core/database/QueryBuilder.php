@@ -71,4 +71,31 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    /**
+     * Create an update query to update a record in the database
+     * @param $data array: associative array with columns and values
+     * @param $table string: the table to update
+     * @param $id int: the id of the record to update
+     */
+    public static function update($data, $table, $id)
+    {
+        $setStr = "";
+        $params = array();
+
+        foreach ($data as $col => $val) {
+            if (trim(strtolower($col)) === 'id') {
+                continue;
+            }
+            
+            $setStr .= "`$col` = :$col,";
+            $params[$col] = $val;
+        }
+
+        $setStr = rtrim($setStr, ",");
+
+        $params['id'] = $id;
+        $query = "UPDATE {$table} SET {$setStr} WHERE id = :id";
+        self::query($query, $params);
+    }
 }
