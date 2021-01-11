@@ -41,6 +41,12 @@ footer {
 	border-radius: .25rem;
 }
 
+.collection-form {
+	max-width: 30rem;
+}
+#bootstrap-override .form-title {
+	width: fit-content;
+}
 .card.collection-card {
 	background-color: #efeae5;
 	width: 14rem;

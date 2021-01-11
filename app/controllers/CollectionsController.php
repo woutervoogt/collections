@@ -21,13 +21,13 @@ class CollectionsController
         }
     }
 
-    public function verzamelingAanmaken()
+    public function createCollection()
     {
         if (array_key_exists('verzamelingTemplate', $_GET)) {
             return view('verzameling-aanmaken', $_GET);
         }
         
-        return view('verzameling-aanmaken');
+        return view('collections-create');
     }
 
     public function showCollection()
@@ -47,10 +47,14 @@ class CollectionsController
             $openbaar = 0;
         }
         App::get('database')->insert('collections', [
-            'name' => $_POST['verzamelingNaam'],
-            'color' => $_POST['verzamelingKleur'],
+            'name' => $_POST['name'],
+            'color' => $_POST['color'],
+            'collection_category' => $_POST['category'],
+            'description' => $_POST['description'],
             'is_public' => $openbaar,
-            'column_1' => $_POST['column1'],
+            'user_id' => $_SESSION['user']['id'],
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
          ]);
         
         return redirect('');

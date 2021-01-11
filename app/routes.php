@@ -3,8 +3,8 @@
 $router->get('', 'PagesController@home');
 
 $router->get('verzamelingen', 'CollectionsController@index');
-$router->get('verzameling/aanmaken', 'CollectionsController@verzamelingAanmaken');
-$router->post('verzameling/aanmaken', 'CollectionsController@store');
+$router->get('verzamelingen/aanmaken', 'CollectionsController@createCollection');
+$router->post('verzamelingen/aanmaken', 'CollectionsController@store');
 
 $router->get('verzameling', 'ItemsController@index');
 
