@@ -22,7 +22,7 @@
                         vitae similique incidunt fugiat, aperiam dolore voluptas labore reiciendis ut perferendis autem
                         cupiditate, a culpa qui officiis consectetur.
                     </p>
-                    <a href="/verzameling_aanmaken">Maak je eigen verzameling aan</a>
+                    <a href="/verzamelingen/aanmaken">Maak je eigen verzameling aan</a>
                 </section>
             </div>
         </div>

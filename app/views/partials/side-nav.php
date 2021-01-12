@@ -13,12 +13,13 @@
             <h5 class="navbar-text pt-3 pb-0 px-3 m-0">Verzameling opties</h5>
         </li>
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="/verzameling/toevoegen">Verzameling
+            <a class="nav-link pt-3 pb-0" href="/verzamelingen/aanmaken">Verzameling
                 toevoegen</a>
         </li>
         <?php if (substr($_SERVER['REQUEST_URI'], 0, 13) === '/verzameling/') :?>
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="/verzameling/aanpassen">Verzameling
+            <a class="nav-link pt-3 pb-0"
+                href="/verzamelingen/aanpassen?id=<?= $data['collection']->id?>">Verzameling
                 aanpassen</a>
         </li>
         <li class="nav-item">
@@ -30,7 +31,7 @@
             </form>
         </li>
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="/verzameling/toevoegen">Item toevoegen</a>
+            <a class="nav-link pt-3 pb-0" href="/verzamelingen/aanmaken">Item toevoegen</a>
         </li>
         <?php endif ?>
         <hr class="mt-3 mb-0 mx-3">
@@ -45,7 +46,8 @@
         for ($i=0; $i < $collectionsCount && $i < 5; $i++) { ?>
 
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="#"><?= $data['collections'][$i]->name ?></a>
+            <a class="nav-link pt-3 pb-0"
+                href="verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
         </li>
 
         <?php
@@ -57,7 +59,8 @@
             <a class="nav-link dropdown-toggle pt-3 pb-0" data-toggle="dropdown">Meer verzamelingen</a>
             <div class="dropdown-menu more-items">
                 <?php for ($i=5; $i < $collectionsCount; $i++) : ?>
-                <a class="dropdown-item" href="#"><?= $data['collections'][$i]->name ?></a>
+                <a class="dropdown-item"
+                    href="verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
                 <?php endfor ?>
 
             </div>

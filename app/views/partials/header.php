@@ -18,18 +18,13 @@
                         <a class="nav-link " aria-current="page" href="/verzamelingen">Verzamelingen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/verzameling/aanmaken">Verzameling
+                        <a class="nav-link " aria-current="page" href="/verzamelingen/aanmaken">Verzameling
                             aanmaken</a>
                     </li>
 
                 </ul>
 
                 <ul class="navbar-nav">
-
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/registreren">Registreren</a>
-                    </li> -->
-
                     <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
                     <li class="nav-item dropdown">
 

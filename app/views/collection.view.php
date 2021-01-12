@@ -32,8 +32,7 @@
                             <?php foreach ($data['items'] as $item) : ?>
 
                             <tr>
-                                <a
-                                    href="verzameling/?id=<?= $item->id ?>">
+                                <a href="item/?id=<?= $item->id ?>">
                                     <td>
                                         <?= $item->name ?>
                                     </td>

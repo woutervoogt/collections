@@ -18,11 +18,11 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item"
-                                            href="/verzameling/aanpassen/?id=<?= $collection->id ?>">Aanpassen</a>
+                                            href="/verzamelingen/aanpassen/?id=<?= $collection->id ?>">Aanpassen</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
-                                            href="/verzameling/verwijderen/?id=<?= $collection->id ?>">Verwijderen</a>
+                                            href="/verzamelingen/verwijderen/?id=<?= $collection->id ?>">Verwijderen</a>
                                     </li>
                                 </ul>
                             </div>
@@ -48,7 +48,8 @@
                                 </div>
                             </a>
                         </div>
-                    </div><?php endforeach ?>
+                    </div>
+                    <?php endforeach ?>
                 </div>
 
             </div>
