@@ -29,7 +29,7 @@ class QueryBuilder
 
     public function selectAll($table)
     {
-        $statement = $this->pdo->prepare("select * from {$table}");
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE deleted IS NULL");
         $statement->execute();
     
         return $statement->fetchAll(PDO::FETCH_CLASS);
@@ -97,5 +97,16 @@ class QueryBuilder
         $params['id'] = $id;
         $query = "UPDATE {$table} SET {$setStr} WHERE id = :id";
         self::query($query, $params);
+    }
+
+    public static function delete($id, $table)
+    {
+        $query = "SELECT deleted FROM $table WHERE id= $id AND deleted IS NULL";
+        $data = self::query($query)->fetch(PDO::FETCH_ASSOC);
+
+        if ($data !== false) {
+            $data['deleted'] = date('Y-m-d H:i:s');
+            self::update($data, $table, $id);
+        }
     }
 }

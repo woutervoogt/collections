@@ -22,8 +22,12 @@
                 aanpassen</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="/verzameling/verwijderen">Verzameling
-                verwijderen</a>
+            <form action="/verzamelingen/verwijderen" method="post">
+                <input type="hidden" name="collection_id"
+                    value="<?= $data['collection']->id ?>">
+                <button class="btn bnt-link nav-link pt-3 pb-0" type="submit">Verzameling
+                    verwijderen</button>
+            </form>
         </li>
         <li class="nav-item">
             <a class="nav-link pt-3 pb-0" href="/verzameling/toevoegen">Item toevoegen</a>

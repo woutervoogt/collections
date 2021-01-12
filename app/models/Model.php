@@ -31,18 +31,18 @@ class Model
      * Fetching all records from table
      * @return array of objects
      */
-    // public static function all(array $selectedFields = null)
-    // {
-    //     $fields = "*";
+    public static function all(array $selectedFields = null)
+    {
+        $fields = "*";
 
-    //     if (count($selectedFields) > 0) {
-    //         $fields = self::composeQuery($selectedFields);
-    //     }
+        if (count($selectedFields) > 0) {
+            $fields = self::composeQuery($selectedFields);
+        }
 
-    //     $sql = "SELECT " . $fields . " FROM " . self::$model . " WHERE deleted IS NULL" . (!empty(self::$limit) ? " LIMIT " . self::$limit : "");
+        $sql = "SELECT $fields FROM " . self::$model . " WHERE deleted IS NULL" . (!empty(self::$limit) ? " LIMIT " . self::$limit : "");
 
-    //     return MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
-    // }
+        return QueryBuilder::query($sql)->fetchAll(PDO::FETCH_CLASS);
+    }
 
     /**
      * Fetching one record based on the id
@@ -94,10 +94,10 @@ class Model
      * Archives a record to the model
      * @param $data array
      */
-    // public static function destroy(int $id)
-    // {
-    //     Mysql::delete($id, self::$model);
-    // }
+    public static function destroy(int $id)
+    {
+        QueryBuilder::delete($id, self::$model);
+    }
 
     private static function removeIllegalFields(array $data)
     {

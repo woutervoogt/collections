@@ -7,6 +7,7 @@ $router->get('verzamelingen/aanmaken', 'CollectionsController@createCollection')
 $router->post('verzamelingen/aanmaken', 'CollectionsController@store');
 $router->get('verzamelingen/aanpassen', 'CollectionsController@edit');
 $router->post('verzamelingen/aanpassen', 'CollectionsController@update');
+$router->post('verzamelingen/verwijderen', 'CollectionsController@destroy');
 
 $router->get('verzameling', 'ItemsController@index');
 

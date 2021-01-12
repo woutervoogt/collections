@@ -13,8 +13,9 @@ class CollectionsController
         // $collections = App::get('database')->selectAll('collections');
         if (isset($_SESSION) && isset($_SESSION['user'])) {
             $data = [];
-            $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
-            $collections = QueryBuilder::query($query)->fetchAll(\PDO::FETCH_CLASS);
+            // $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
+            $collections = CollectionModel::allUserCollections($_SESSION['user']['id']);
+            
             $data = ['collections' => $collections];
             return view('collections', $data);
         } else {
@@ -82,6 +83,14 @@ class CollectionsController
             'description' => $_POST['description'],
             'is_public' => $public,
         ], $_POST['id']);
+        
+        return redirect('verzamelingen');
+    }
+
+    public function destroy()
+    {
+        $id = $_POST['collection_id'];
+        CollectionModel::destroy($id);
         
         return redirect('verzamelingen');
     }
