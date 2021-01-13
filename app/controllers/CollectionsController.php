@@ -23,23 +23,19 @@ class CollectionsController
         }
     }
 
-    public function createCollection()
+    public function create()
     {
-        if (array_key_exists('verzamelingTemplate', $_GET)) {
-            return view('verzameling-aanmaken', $_GET);
-        }
-        
         return view('collections-create');
     }
 
-    public function showCollection()
-    {
-        $id = $_GET['id'];
-        $collection = CollectionModel::getOneById($id);
-        $items = App::get('database')->selectAll($collection->collection_category);
-        $data = ['collection' => $collection, 'items' => $items];
-        return view('collection', $data);
-    }
+    // public function showCollection()
+    // {
+    //     $id = $_GET['id'];
+    //     $collection = CollectionModel::getOneById($id);
+    //     $items = App::get('database')->selectAll($collection->collection_category);
+    //     $data = ['collection' => $collection, 'items' => $items];
+    //     return view('collection', $data);
+    // }
 
     public function store()
     {

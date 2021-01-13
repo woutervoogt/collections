@@ -31,7 +31,8 @@
             </form>
         </li>
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="/verzamelingen/aanmaken">Item toevoegen</a>
+            <a class="nav-link pt-3 pb-0" href="/items/aanmaken/?collection_id=" <?= $data['collection']->id?>"">Item
+                toevoegen</a>
         </li>
         <?php endif ?>
         <hr class="mt-3 mb-0 mx-3">
