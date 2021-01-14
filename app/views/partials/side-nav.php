@@ -31,14 +31,15 @@
             </form>
         </li>
         <li class="nav-item">
-            <a class="nav-link pt-3 pb-0" href="/items/aanmaken/?collection_id=" <?= $data['collection']->id?>"">Item
+            <a class="nav-link pt-3 pb-0"
+                href="/items/aanmaken/?collection_id=<?= $data['collection']->id?>"">Item
                 toevoegen</a>
         </li>
         <?php endif ?>
-        <hr class="mt-3 mb-0 mx-3">
-        <?php endif ?>
+        <hr class=" mt-3 mb-0 mx-3">
+                <?php endif ?>
 
-        <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
+                <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
         <li class="nav-item">
             <h5 class="navbar-text pt-4 pb-0 px-3 m-0">Verzamelingen</h5>
         </li>
@@ -48,7 +49,7 @@
 
         <li class="nav-item">
             <a class="nav-link pt-3 pb-0"
-                href="verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
+                href="/verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
         </li>
 
         <?php
@@ -61,7 +62,7 @@
             <div class="dropdown-menu more-items">
                 <?php for ($i=5; $i < $collectionsCount; $i++) : ?>
                 <a class="dropdown-item"
-                    href="verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
+                    href="/verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
                 <?php endfor ?>
 
             </div>

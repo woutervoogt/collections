@@ -23,11 +23,13 @@
                         </p>
                         <p>Omschrijving: <?= $data['item']->description ?>
                         </p>
+                        <?php if (isset($data['item']->tracklist)) : ?>
                         <?php foreach (json_decode($data['item']->tracklist, false) as $track) : ?>
                         <p>
                             <?= $track->nr ?>. <?= $track->Title ?> (<?= $track->Duration ?>)
                         </p>
                         <?php endforeach ?>
+                        <?php endif ?>
                     </div>
                     <div class="col">
                         <p>Identificatie Nummer: <?= $data['item']->id_code ?>
