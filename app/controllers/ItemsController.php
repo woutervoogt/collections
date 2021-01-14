@@ -83,10 +83,10 @@ class ItemsController
             'genre' => $_POST['genre'],
             'id_code' => $_POST['id_code'],
             'year' => $_POST['year'],
-            'tracklist' => $_POST['tracklist'],
+            // 'tracklist' => $_POST['tracklist'],
             'amount' => $_POST['amount'],
             'notes' => $_POST['notes']
-        ], $_POST['id']);
+        ], $_POST['itemId']);
         
         return redirect('verzamelingen');
     }
