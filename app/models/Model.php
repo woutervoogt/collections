@@ -20,9 +20,9 @@ class Model
      * Constructor
      * Set $model and $limit from child Model
      */
-    public function __construct($model, $limit = null, $protectedFields = null)
+    public function __construct($model, $plural = null, $limit = null, $protectedFields = null)
     {
-        self::$model = pluralize(4, $model);
+        self::$model = pluralize(4, $model, $plural);
         self::$limit = $limit;
         self::$protectedFields = $protectedFields;
     }
@@ -56,7 +56,7 @@ class Model
 
         $fields = "*";
 
-        if (count($selectedFields) > 0) {
+        if (!empty($selectedFields) && count($selectedFields) > 0) {
             $fields = self::composeQuery($selectedFields);
         }
 

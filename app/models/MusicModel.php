@@ -11,6 +11,9 @@ class MusicModel extends ItemModel
     // Name of the table
     protected $model = "music";
 
+    // Plural of table
+    protected $plural = "music";
+
     // Max number of records when fetching all records from table
     protected $limit;
 
@@ -28,6 +31,7 @@ class MusicModel extends ItemModel
     {
         parent::__construct(
             $this->model,
+            $this->plural,
             $this->limit,
             $this->protectedFields
         );

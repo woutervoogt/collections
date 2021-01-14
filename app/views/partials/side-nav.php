@@ -8,7 +8,7 @@
         </h4>
         <?php endif ?>
 
-        <?php if (isset($_SESSION) && isset($_SESSION['user']) && $_SESSION['user']['id'] === $data['collections'][0]->user_id) : ?>
+        <?php if (isset($_SESSION) && isset($_SESSION['user']) && isset($data['collections']) && $_SESSION['user']['id'] === $data['collections'][0]->user_id) : ?>
         <li class="nav-item">
             <h5 class="navbar-text pt-3 pb-0 px-3 m-0">Verzameling opties</h5>
         </li>

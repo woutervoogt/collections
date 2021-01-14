@@ -11,6 +11,9 @@ class ItemModel extends Model
     // Name of the table
     protected $model = "";
 
+    // Plural of table
+    protected $plural = "music";
+
     // Max number of records when fetching all records from table
     protected $limit;
 
@@ -23,14 +26,16 @@ class ItemModel extends Model
         'deleted_by',
     ];
 
-    public function __construct($model, $limit = null, $protectedFields = null)
+    public function __construct($model, $plural = null, $limit = null, $protectedFields = null)
     {
-        self::$model = $model;
-        self::$limit = $limit;
-        self::$protectedFields = $protectedFields;
+        $this->model = $model;
+        $this->plural = $plural;
+        $this->limit = $limit;
+        $this->protectedFields = $protectedFields;
         
         parent::__construct(
             $this->model,
+            $this->plural,
             $this->limit,
             $this->protectedFields
         );

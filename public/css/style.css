@@ -69,6 +69,10 @@ footer {
 	color: #efeae5;
 }
 
+.item-table-cell {
+	position: relative;
+}
+
 #bootstrap-override .more-items {
 	background-color: #607b94;
 }

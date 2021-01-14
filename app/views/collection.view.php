@@ -32,26 +32,42 @@
                             <?php foreach ($data['items'] as $item) : ?>
 
                             <tr>
-                                <a href="item/?id=<?= $item->id ?>">
-                                    <td>
+                                <td class="item-table-cell">
+                                    <a href="/items/?item_id=<?= $item->id ?>"
+                                        class="stretched-link">
                                         <?= $item->name ?>
-                                    </td>
-                                    <td>
+                                    </a>
+                                </td>
+                                <td class="item-table-cell">
+                                    <a href="/items/?item_id=<?= $item->id ?>"
+                                        class="stretched-link">
                                         <?= $item->artist ?>
-                                    </td>
-                                    <td>
+                                    </a>
+                                </td>
+                                <td class="item-table-cell">
+                                    <a href="/items/?item_id=<?= $item->id ?>"
+                                        class="stretched-link">
                                         <?= $item->album ?>
-                                    </td>
-                                    <td>
+                                    </a>
+                                </td>
+                                <td class="item-table-cell">
+                                    <a href="/items/?item_id=<?= $item->id ?>"
+                                        class="stretched-link">
                                         <?= $item->genre ?>
-                                    </td>
-                                    <td>
+                                    </a>
+                                </td>
+                                <td class="item-table-cell">
+                                    <a href="/items/?item_id=<?= $item->id ?>"
+                                        class="stretched-link">
                                         <?= $item->year ?>
-                                    </td>
-                                    <td>
+                                    </a>
+                                </td>
+                                <td class="item-table-cell">
+                                    <a href="/items/?item_id=<?= $item->id ?>"
+                                        class="stretched-link">
                                         <?= $item->amount ?>
-                                    </td>
-                                </a>
+                                    </a>
+                                </td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\App;
 use App\Core\Database\QueryBuilder;
 use App\Models\MusicModel;
+use App\Models\CollectionModel;
 
 class ItemsController
 {
@@ -26,7 +27,10 @@ class ItemsController
 
     public function show()
     {
-        return view('item');
+        $itemId = $_GET['item_id'];
+        $data['collections'] = CollectionModel::allUserCollections($_SESSION['user']['id']);
+        $data['item'] = MusicModel::getOneById($itemId);
+        return view('item', $data);
     }
 
     public function create()
