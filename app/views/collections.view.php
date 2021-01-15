@@ -14,7 +14,7 @@
 
                             <div class="btn-group dropup">
                                 <button class="collection-btn btn btn-sm position-absolute top-0 end-0 p-1"
-                                    data-bs-toggle="dropdown"><i data-feather="more-vertical"></i></button>
+                                    data-toggle="dropdown"><i data-feather="more-vertical"></i></button>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item"

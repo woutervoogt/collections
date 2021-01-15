@@ -9,8 +9,8 @@ $router->get('verzamelingen', 'CollectionsController@index', [IsLoggedIn::class]
 $router->get('verzamelingen/aanmaken', 'CollectionsController@create', [IsLoggedIn::class]);
 $router->post('verzamelingen/aanmaken', 'CollectionsController@store', [IsLoggedIn::class]);
 $router->get('verzamelingen/aanpassen', 'CollectionsController@edit', [IsLoggedIn::class, IsOwner::class]);
-$router->post('verzamelingen/aanpassen', 'CollectionsController@update', [IsLoggedIn::class]);
-$router->post('verzamelingen/verwijderen', 'CollectionsController@destroy', [IsLoggedIn::class]);
+$router->post('verzamelingen/aanpassen', 'CollectionsController@update', [IsLoggedIn::class, IsOwner::class]);
+$router->post('verzamelingen/verwijderen', 'CollectionsController@destroy', [IsLoggedIn::class, IsOwner::class]);
 
 $router->get('verzameling', 'ItemsController@index');
 $router->get('items', 'ItemsController@show');

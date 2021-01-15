@@ -40,11 +40,103 @@ return [
             'name' => "Vinyl",
             'is_public'  => true,
             'collection_category' => "music",
-            'color' => "#ff1100",
-            'user_id' => 1,
+            'color' => "#5b2a2a",
+            'description' => 'Mijn elpee verzameling',
+            'user_id' => 2,
             'created'    => date('Y-m-d H:i:s'),
             'created_by' => 1
-        ]),
+        ],
+        [
+            'name' => "Meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#435b2a",
+            'description' => 'Nog een muziekverzameling',
+            'user_id' => 2,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 2,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 2,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 2,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 2,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 3,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 3,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 3,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ],
+        [
+            'name' => "Nog meer muziek",
+            'is_public'  => true,
+            'collection_category' => "music",
+            'color' => "#2a5b53",
+            'description' => 'Dit is ook muziek',
+            'user_id' => 3,
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1
+        ]
+    ),
     ],
     
 ];

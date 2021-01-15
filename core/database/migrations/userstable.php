@@ -28,6 +28,21 @@ return [
             'password'   => password_hash('admin1', PASSWORD_DEFAULT),
             'created'    => date('Y-m-d H:i:s'),
             'created_by' => 1,
-        ]),
+        ],
+        [
+            'name' => 'Jan',
+            'email'      => 'jan@collections.nl',
+            'password'   => password_hash('jan', PASSWORD_DEFAULT),
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1,
+        ],
+        [
+            'name' => 'Fred',
+            'email'      => 'fred@collections.nl',
+            'password'   => password_hash('fred', PASSWORD_DEFAULT),
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1,
+        ]
+    ),
     ],
 ];

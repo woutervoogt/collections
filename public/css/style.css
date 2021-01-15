@@ -49,6 +49,11 @@ footer {
 #bootstrap-override .form-title {
 	width: fit-content;
 }
+
+#bootstrap-override .dropdown-item {
+	background-color: white;
+}
+
 .card.collection-card {
 	background-color: #efeae5;
 	width: 14rem;
