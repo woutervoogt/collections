@@ -11,16 +11,11 @@ class CollectionsController
     public function index()
     {
         // $collections = App::get('database')->selectAll('collections');
-        if (isset($_SESSION) && isset($_SESSION['user'])) {
-            $data = [];
-            // $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
-            $collections = CollectionModel::allUserCollections($_SESSION['user']['id']);
-            
-            $data = ['collections' => $collections];
-            return view('collections', $data);
-        } else {
-            redirect('login');
-        }
+
+        // $query = "SELECT * FROM collections WHERE user_id=" . "{$_SESSION['user']['id']}";
+        $collections = CollectionModel::allUserCollections($_SESSION['user']['id']);
+        $data = ['collections' => $collections];
+        return view('collections', $data);
     }
 
     public function create()
@@ -78,7 +73,7 @@ class CollectionsController
             'color' => $_POST['color'],
             'description' => $_POST['description'],
             'is_public' => $public,
-        ], $_POST['id']);
+        ], $_POST['collection_id']);
         
         return redirect('verzamelingen');
     }

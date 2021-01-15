@@ -11,7 +11,7 @@ class ItemsController
 {
     public function index()
     {
-        $id = $_GET['id'];
+        $id = $_GET['collection_id'];
         $collection = App::get('database')->selectOne('collections', 'id', $id);
         $items = App::get('database')->selectAll($collection->collection_category);
         $data = ['collection' => $collection, 'items' => $items];

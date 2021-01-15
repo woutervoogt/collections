@@ -19,7 +19,7 @@
         <?php if (substr($_SERVER['REQUEST_URI'], 0, 13) === '/verzameling/') :?>
         <li class="nav-item">
             <a class="nav-link pt-3 pb-0"
-                href="/verzamelingen/aanpassen?id=<?= $data['collection']->id?>">Verzameling
+                href="/verzamelingen/aanpassen/?collection_id=<?= $data['collection']->id?>">Verzameling
                 aanpassen</a>
         </li>
         <li class="nav-item">
@@ -49,7 +49,7 @@
 
         <li class="nav-item">
             <a class="nav-link pt-3 pb-0"
-                href="/verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
+                href="/verzameling/?collection_id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
         </li>
 
         <?php
@@ -62,7 +62,7 @@
             <div class="dropdown-menu more-items">
                 <?php for ($i=5; $i < $collectionsCount; $i++) : ?>
                 <a class="dropdown-item"
-                    href="/verzameling/?id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
+                    href="/verzameling/?collection_id=<?= $data['collections'][$i]->id ?>"><?= $data['collections'][$i]->name ?></a>
                 <?php endfor ?>
 
             </div>

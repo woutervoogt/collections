@@ -2,7 +2,7 @@
     <nav id="top-navbar" class="navbar navbar-expand-lg">
 
         <div class="container-fluid">
-            <a class="navbar-brand p-0" href="/">
+            <a class="navbar-brand p-0 me-1 me-sm-2" href="/">
                 <img src="/public/images/logo.png" height="50" alt="">
             </a>
             <button class="navbar-toggler top-nav-toggle" type="button" data-toggle="collapse" data-target="#navbarNav"

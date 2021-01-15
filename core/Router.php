@@ -21,21 +21,34 @@ class Router
         $this->routes = $routes;
     }
 
-    public function get($uri, $controller)
+    public function get($uri, $controller, array $middleware = [])
     {
-        $this->routes['GET'][$uri] = $controller;
+        $this->routes['GET'][$uri] = [
+            'controller' => $controller,
+            'middleware' => $middleware
+        ];
     }
 
-    public function post($uri, $controller)
+    public function post($uri, $controller, array $middleware = [])
     {
-        $this->routes['POST'][$uri] = $controller;
+        $this->routes['POST'][$uri] = [
+            'controller' => $controller,
+            'middleware' => $middleware
+        ];
     }
 
     public function direct($uri, $requestType)
     {
         if (array_key_exists($uri, $this->routes[$requestType])) {
+            $routeData = $this->routes[$requestType][$uri];
+            if (isset($routeData['middleware']) && $routeData['middleware'] !== false) {
+                foreach ($routeData['middleware'] as $middleWare) {
+                    new $middleWare();
+                }
+            }
+
             return $this->callAction(
-                ...explode('@', $this->routes[$requestType][$uri])
+                ...explode('@', $routeData['controller'])
             );
         }
     

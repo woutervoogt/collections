@@ -1,9 +1,12 @@
 html {
 	min-height: 100vh;
+	height: 100%;
 }
 
 body {
 	min-height: 100vh;
+	min-width: 275px;
+	height: 100%;
 	position: relative;
 	overflow: auto;
 	padding-bottom: 10rem; /*height of footer*/
@@ -12,17 +15,16 @@ body {
 #bootstrap-override {
 	background-color: #efeae5;
 }
-/* main {
-	
 
-} */
+main {
+	height: calc(100% - 66px);
+}
 
 footer {
 	margin-top: auto;
 	height: 10rem;
 	position: absolute;
 	bottom: 0;
-	width: 100vw;
 }
 
 #bootstrap-override #top-navbar {

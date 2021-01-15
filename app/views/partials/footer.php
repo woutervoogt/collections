@@ -1,5 +1,6 @@
-<footer class="mt-5">
+<footer class="container-fluid">
     Footer
+
 </footer>
 
 <script>

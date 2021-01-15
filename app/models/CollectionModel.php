@@ -41,7 +41,7 @@ class CollectionModel extends Model
         // }
         
         $sql = "SELECT * FROM collections WHERE user_id = $uid AND deleted IS NULL";
-        
+      
         return QueryBuilder::query($sql)->fetchAll(PDO::FETCH_CLASS);
     }
 }

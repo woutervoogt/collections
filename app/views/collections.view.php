@@ -2,8 +2,8 @@
 <?php require 'partials/header.php'; ?>
 
 <main>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
             <?php require 'partials/side-nav.php'; ?>
 
             <div class="col pt-5">
@@ -18,17 +18,17 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item"
-                                            href="/verzamelingen/aanpassen/?id=<?= $collection->id ?>">Aanpassen</a>
+                                            href="/verzamelingen/aanpassen/?collection_id=<?= $collection->id ?>">Aanpassen</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
-                                            href="/verzamelingen/verwijderen/?id=<?= $collection->id ?>">Verwijderen</a>
+                                            href="/verzamelingen/verwijderen/?collection_id=<?= $collection->id ?>">Verwijderen</a>
                                     </li>
                                 </ul>
                             </div>
 
                             <a
-                                href="/verzameling/?id=<?= $collection->id ?>">
+                                href="/verzameling/?collection_id=<?= $collection->id ?>">
                                 <?php if (!empty($collection->img)) : ?>
                                 <img class=" card-img-top"
                                     src="<?= $collection->img ?>"
